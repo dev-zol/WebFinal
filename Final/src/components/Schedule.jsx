@@ -1,8 +1,17 @@
-export default function Schedule() {
+import { useEffect } from "react";
+
+export default function Schedule(props) {
+  
+    useEffect(() => {
+      if(props.border) {
+        document.getElementById('schedule').className = "w-2/5 md:mr-10 border-solid border-l-2 border-accent-blue"
+      }
+    });
+
     return (
-    <section className='w-1/2'>
-        <div className='grid grid-cols-5 w-3/4 mx-auto gap-6'>
-          <h1 className='col-span-5 mx-auto text-center text-2xl'>Spring 2022 Schedule</h1>
+      <section id="schedule" className='w-full md:mr-10'>
+        <div className='grid grid-cols-4 w-full gap-6'>
+          <h1 className='col-span-4 mx-auto text-center text-2xl'>Spring 2022 Schedule</h1>
           <div className='text-xl place-content-center grid'>Monday</div>
           <div className='flex flex-col'>
             <div className='border-b-2'>12:30 - 2:00</div>
@@ -12,7 +21,7 @@ export default function Schedule() {
             <div className='border-b-2'>Meetings</div>
             <div>Office Hours</div>
           </div>
-          <div className='flex flex-col col-span-2'>
+          <div className='flex flex-col col-span-1'>
             <div className='border-b-2'>&nbsp;</div>
             <div>HCCA 209A or Zoom</div>
           </div>
@@ -29,7 +38,7 @@ export default function Schedule() {
             <div className='border-b-2'>Office Hours</div>
             <div>Meetings</div>
           </div>
-          <div className='flex flex-col col-span-2'>
+          <div className='flex flex-col col-span-1'>
             <div className='border-b-2'>Rigge 120</div>
             <div className='border-b-2'>Eppley 110</div>
             <div className='border-b-2'>HCCA 209A or Zoom</div>
@@ -44,7 +53,7 @@ export default function Schedule() {
             <div className='border-b-2'>Meetings</div>
             <div>Office Hours</div>
           </div>
-          <div className='flex flex-col col-span-2'>
+          <div className='flex flex-col col-span-1'>
             <div className='border-b-2'>&nbsp;</div>
             <div>HCCA 209A or Zoom</div>
           </div>
@@ -61,7 +70,7 @@ export default function Schedule() {
             <div className='border-b-2'>Office Hours</div>
             <div>CSC 121C</div>
           </div>
-          <div className='flex flex-col col-span-2'>
+          <div className='flex flex-col col-span-1'>
             <div className='border-b-2'>Rigge 120</div>
             <div className='border-b-2'>Eppley 110</div>
             <div className='border-b-2'>HCCA 209A or Zoom</div>
@@ -77,8 +86,8 @@ export default function Schedule() {
           <div className='flex flex-col col-span-2'>
             <div>&nbsp;</div>
           </div>
+          <div className='text-m col-span-3 col-start-2 w-5/6'>Feel free to stop by my office anytime or call to arange an appointment</div>
         </div>
-        <div className='text-m col-span-5 mx-auto text-center mt-3'>In addition, feel free to stop by my office anytime or call to arange an appointment</div>
-    </section>
+      </section>
     );
 };
